@@ -333,7 +333,7 @@ The Linux command line can be intimidating at first, but once you get comfortabl
 
 ---
 
-**📝 Text Editing with Vim**
+### **📝 Editing Files with Vim Editor**
 
 The `vim` (or `vi`) editor is built into most Linux systems and is incredibly powerful once you learn the basics.
 
@@ -343,14 +343,14 @@ The `vim` (or `vi`) editor is built into most Linux systems and is incredibly po
 vim filename
 ```
 
-**🔹 Modes in Vim**
+**🎯 Vim Modes**
 
-* **Command Mode** *(Default)*: Navigate, copy, delete, search
-    
-* **Insert Mode**: Edit text
-    
-* **Save & Quit Mode**: Save or exit the editor
-    
+* 1. **Command Mode** – Default (copy, delete, move, search)
+        
+    2. **Insert Mode** – Type and edit text
+        
+    3. **Save & Quit Mode** – Save changes and exit
+        
 
 **🔹 Navigating Inside Vim**
 
@@ -416,21 +416,57 @@ Got stuck? Want a Vim cheat sheet? Drop a comment or share your favorite Linux t
 
 ---
 
+### **👤 User, Group, and Text Commands**
+
+**👥 User Management**
+
+```bash
+cat /etc/passwd             # List users
+useradd username            # Add user (creates home dir + group)
+useradd -M username         # Add user without home folder
+userdel username            # Delete user (keeps folder)
+userdel -r username         # Delete user + folder
+passwd username             # Set user password
+su - username               # Switch to user
+```
+
+**👪 Group Management**
+
+```bash
+cat /etc/group              # List groups
+groupadd groupname          # Add group
+groupdel groupname          # Delete group
+usermod -a -G group user    # Add user to group
+```
+
+> ⚠️ Don’t forget the `-a` flag with `usermod`. Without it, existing group memberships are removed.
+
+**📄 Advanced File Reading**
+
+```bash
+cat filename                # View file
+cat -n filename             # View with line numbers
+head filename               # Top 10 lines
+tail filename               # Last 10 lines
+head -n 15 filename         # First 15 lines
+tail -n 20 filename         # Last 20 lines
+sed -n '15,30p' filename    # Print lines 15–30
+```
+
+### 🔍 Using grep to Search
+
+```bash
+grep "word" filename        # Search for word
+grep -n "word" filename     # With line numbers
+grep -c "word" filename     # Count occurrences
+grep -i "word" filename     # Case-insensitive
+```
+
+---
+
 ## 🏁 Conclusion
 
 Linux is more than just an OS — it's a **powerful ecosystem** that empowers developers, system admins, and organizations worldwide. Whether you're managing a server or developing an app, mastering the **Linux basics and commands** is your first step to unlocking its full potential.
 
 **⭐ *Follow me for more Linux & DevOps content!*  
 🔁 *Leave a comment if you found this helpful or want more command deep-dives!***
-
-```yaml
-
----
-
-Would you like me to:
-- Suggest a **cover image** for the blog?
-- Create a **second part** on advanced Linux topics?
-- Generate a **logo** to match your blog theme?
-
-Let me know!
-```
