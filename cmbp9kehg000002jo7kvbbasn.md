@@ -462,6 +462,71 @@ grep -c "word" filename     # Count occurrences
 grep -i "word" filename     # Case-insensitive
 ```
 
+### **🔐 File Ownership and Permissions**
+
+**👤 Change File Owner**
+
+```bash
+chown user filename
+chgrp group filename
+chown user:group filename
+chown user:group file1 file2 file3
+chown user:group folder             # Folder only
+chown user:group folder/*           # Files only
+chown -R user:group folder          # Files + folders recursively
+```
+
+**🔒 Change File Permissions**
+
+```bash
+chmod 754 filename
+chmod 777 file1 file2 file3
+chmod 654 folder                   # Folder only
+chmod 567 folder/*                 # Files only
+chmod -R 123 folder                # Files + folders recursively
+```
+
+### **🔎 Searching Files & Folders**
+
+**🔍 Using** `find`
+
+```bash
+find path -name filename
+find . -name file                # In current directory
+find /proc/ -name filename       # In /proc
+find . -type d -name folder      # Find folder
+find . -type f -name file1.txt   # Find file
+find . -type f -perm 777         # Files with 777 permission
+find . -type f ! -perm 777       # Files NOT with 777 permission
+find / -user username            # Files owned by user
+find / -group groupname          # Files owned by group
+```
+
+**📍 Using** `locate`
+
+```bash
+sudo updatedb                    # Update database first
+locate filename
+```
+
+> **🔁** `find` **vs** `locate`**:**
+> 
+> * `find` **searches live in paths you specify**
+>     
+> * `locate` **searches a cached database (faster, less precise)**
+>     
+
+### **⚙️ Terminal Productivity Tips**
+
+| Task | Shortcut |
+| --- | --- |
+| Delete entire command | `Ctrl + U` |
+| Cut after cursor | `Ctrl + K` |
+| Go to beginning | `Ctrl + A` |
+| Go to end | `Ctrl + E` |
+| Reverse search history | `Ctrl + R` |
+| Show command history | `history` |
+
 ---
 
 ## 🏁 Conclusion
