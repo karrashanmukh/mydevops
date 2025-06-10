@@ -333,6 +333,89 @@ The Linux command line can be intimidating at first, but once you get comfortabl
 
 ---
 
+**📝 Text Editing with Vim**
+
+The `vim` (or `vi`) editor is built into most Linux systems and is incredibly powerful once you learn the basics.
+
+**🔹 Opening “vim” Files**
+
+```bash
+vim filename
+```
+
+**🔹 Modes in Vim**
+
+* **Command Mode** *(Default)*: Navigate, copy, delete, search
+    
+* **Insert Mode**: Edit text
+    
+* **Save & Quit Mode**: Save or exit the editor
+    
+
+**🔹 Navigating Inside Vim**
+
+```bash
+gg          # Go to first line
+G           # Go to last line
+M           # Middle of the file
+4gg         # Go to line 4
+:set number # Show line numbers
+```
+
+**🔹 Insert Mode**
+
+```bash
+i           # Start inserting at cursor
+A           # Insert at end of line
+I           # Insert at start of line
+o           # New line below
+O           # New line above
+```
+
+#### 🔹 Command Mode Actions
+
+```bash
+yy          # Copy current line
+4yy         # Copy 4 lines
+p           # Paste copied content
+10p         # Paste 10 times
+dd          # Delete current line
+5dd         # Delete 5 lines
+u           # Undo
+Ctrl + r    # Redo
+/word       # Search forward
+?word       # Search backward
+:%s/old/new/    # Replace all occurrences
+```
+
+**🔹 Save & Exit**
+
+```bash
+:w          # Save
+:q          # Quit
+:q!         # Quit without saving
+:wq         # Save and quit
+:wq!        # Force save and quit
+```
+
+**🧠 Bonus Tip: When to Use** `cat`
+
+```bash
+cat filename       # View file content
+cat > filename     # Overwrite file content
+cat >> filename    # Append content to file
+```
+
+> **⚠️ The** `cat` **command can’t *edit* content. For edits, always use Vim or Nano.**
+
+**✨ Final Words Vim**
+
+Linux is a powerful tool — and knowing your way around the file system and text editors like Vim gives you superpowers. From managing files to editing configuration files, this guide gives you a solid foundation.
+
+Got stuck? Want a Vim cheat sheet? Drop a comment or share your favorite Linux trick!
+
+---
+
 ## 🏁 Conclusion
 
 Linux is more than just an OS — it's a **powerful ecosystem** that empowers developers, system admins, and organizations worldwide. Whether you're managing a server or developing an app, mastering the **Linux basics and commands** is your first step to unlocking its full potential.
