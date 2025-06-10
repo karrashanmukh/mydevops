@@ -7,7 +7,7 @@ cuid: cmbp9kehg000002jo7kvbbasn
 slug: linux-basics-explained-from-os-concepts-to-essential-commands
 canonical: https://devopslinuxcraft.hashnode.dev/
 cover: https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/oqStl2L5oxI/upload/945b0f54ee90b849a001a67c04137049.jpeg
-tags: opensource, devops-tools, linux-for-beginners, linux-commands, operatingsystems, fundamentals-of-linux, sysadmin-basics, kernel-and-shell
+tags: linux, opensource, cli, devops, shell, beginners, terminal-commands, devops-tools, linux-for-beginners, linux-commands, operatingsystems, fundamentals-of-linux, sysadmin-basics, kernel-and-shell
 
 ---
 
@@ -192,11 +192,11 @@ df -h       # Disk usage
 
 | **Command** | **Description** | **Example Usage** |
 | --- | --- | --- |
-| `lscpu` | Displays detailed CPU architecture information (cores, threads, model). | `lscpu | grep "Model name"` |
-| `lsblk -a` | Lists all block devices (disks, partitions) with tree-like hierarchy. | `lsblk -a | grep "sd"` |
-| `free` | Shows RAM usage in **kilobytes (KB)** (total, used, free, cache). | `free | grep "Mem"` |
+| `lscpu` | Displays detailed CPU architecture information (cores, threads, model). | \`lscpu |
+| `lsblk -a` | Lists all block devices (disks, partitions) with tree-like hierarchy. | \`lsblk -a |
+| `free` | Shows RAM usage in **kilobytes (KB)** (total, used, free, cache). | \`free |
 | `free -m` | Displays RAM usage in **megabytes (MB)** (easier to read). | `free -m` |
-| `df -h` | Reports disk space usage in **human-readable** format (GB/MB). | `df -h | grep "/dev/nvme0n1p2"` |
+| `df -h` | Reports disk space usage in **human-readable** format (GB/MB). | \`df -h |
 
 **You can also use** `date +` **with various options to format output:**
 
@@ -207,16 +207,138 @@ date +"%A"        # Day of the week
 
 ---
 
+### **🐧 Linux File and Folder Commands**
+
+**📄 1. Creating Files**
+
+Use the `touch` command to create one or multiple files:
+
+```bash
+touch filename
+touch aws azure gcp
+touch linux{1..5}  # Creates linux1, linux2, ..., linux5
+```
+
+**❌ 2. Deleting Files**
+
+Remove files using `rm`. Be cautious — deleted files don't go to a recycle bin!
+
+```bash
+rm filename               # Prompts before deleting
+rm -f filename            # Force delete (no prompt)
+rm -f aws azure gcp       # Delete multiple files
+rm -f linux{1..5}         # Delete linux1 to linux5
+rm -f *.txt               # Delete all .txt files
+rm -f a*                  # Delete files starting with 'a'
+rm -f *                   # Delete all files in current directory
+```
+
+**📁 3. Creating Folders**
+
+To create directories (folders), use `mkdir`:
+
+```bash
+mkdir foldername
+mkdir git maven jenkins
+mkdir docker{1..5}        # docker1 to docker5
+```
+
+Create nested directories with the `-p` option:
+
+```bash
+mkdir -p aws/azure/gcp/ccit
+```
+
+**🗑️ 4. Deleting Folders**
+
+Use `rmdir` to remove empty folders:
+
+```bash
+rmdir foldername
+rmdir git maven jenkins
+rmdir docker{1..5}
+rmdir *                   # Remove all empty folders
+```
+
+To remove folders and their contents, use:
+
+```bash
+rm -rf foldername
+rm -rf *                  # ⚠️ DANGEROUS: Deletes all files & folders
+```
+
+**📂 5. Changing Directories**
+
+Navigate through your file system:
+
+```bash
+cd foldername             # Enter a folder
+cd                        # Go to home directory
+cd -                      # Go to previous directory
+cd ../                    # Go one directory up
+cd ../../                 # Go two directories up
+```
+
+**🗂️ 6. Listing Files and Folders**
+
+To see what’s inside your directory:
+
+```bash
+ls                        # Lists names only
+ll                        # Lists detailed info (permissions, size, etc.)
+```
+
+Check contents of a specific folder:
+
+```bash
+ll foldername
+```
+
+**📋 7. Copying Files**
+
+The `cp` command is used to copy files:
+
+```bash
+cp file1 file2            # Overwrites file2 with contents of file1
+```
+
+To **append** content instead of overwriting, use:
+
+```bash
+cat file1 >> file2        # Appends content of file1 to file2
+```
+
+**🔁 8. Moving or Renaming Files**
+
+The `mv` command can move or rename:
+
+```bash
+mv file1 file2            # Renames file1 to file2 or moves it
+```
+
+**🧠 Pro Tip: Use Brace Expansion to Save Time**
+
+Linux supports brace expansion for patterns:
+
+```bash
+mkdir project{1..3}       # Creates project1, project2, project3
+touch test{A..C}.txt      # Creates testA.txt, testB.txt, testC.txt
+```
+
+**🔚 Final Thought for** **Linux File and Folder Commands**
+
+The Linux command line can be intimidating at first, but once you get comfortable with file and folder operations, everything else becomes easier. Try these commands in your terminal, and you'll quickly gain confidence in managing your system efficiently.
+
+> 💬 Do you use any Linux shortcuts that save you time? Share them in the comments below!
+
+---
+
 ## 🏁 Conclusion
 
 Linux is more than just an OS — it's a **powerful ecosystem** that empowers developers, system admins, and organizations worldwide. Whether you're managing a server or developing an app, mastering the **Linux basics and commands** is your first step to unlocking its full potential.
 
----
-
-⭐ *Follow me for more Linux & DevOps content!*  
-🔁 *Leave a comment if you found this helpful or want more command deep-dives!*
-
----
+**⭐ *Follow me for more Linux & DevOps content!*  
+🔁 *Leave a comment if you found this helpful or want more command deep-dives!***
 
 ```yaml
 
@@ -229,5 +351,3 @@ Would you like me to:
 
 Let me know!
 ```
-
----
