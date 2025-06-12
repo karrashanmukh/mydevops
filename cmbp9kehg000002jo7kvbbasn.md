@@ -6,7 +6,7 @@ datePublished: Sun Jun 08 2025 18:30:00 GMT+0000 (Coordinated Universal Time)
 cuid: cmbp9kehg000002jo7kvbbasn
 slug: linux-basics-explained-from-os-concepts-to-essential-commands
 canonical: https://devopslinuxcraft.hashnode.dev/
-cover: https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/oqStl2L5oxI/upload/945b0f54ee90b849a001a67c04137049.jpeg
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1749746526889/5d7c1ca8-2ecf-4eef-8eb2-21ea8e1d1426.png
 ogImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1749746433984/ebe6264a-944c-4471-980b-df1407f91f56.png
 tags: linux, opensource, cli, devops, shell, beginners, terminal-commands, devops-tools, linux-for-beginners, linux-commands, operatingsystems, fundamentals-of-linux, sysadmin-basics, kernel-and-shell
 
