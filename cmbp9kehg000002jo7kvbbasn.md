@@ -146,6 +146,13 @@ timedatectl                # View timezone info
 timedatectl set-timezone Asia/Kolkata  # Set timezone
 ```
 
+**You can also use** `date +` **with various options to format output:**
+
+```bash
+date +"%d-%m-%Y"  # Custom date format
+date +"%A"        # Day of the week
+```
+
 **🗓️ Formatted** `date` **Command Options in Linux**
 
 ```bash
@@ -197,13 +204,6 @@ df -h       # Disk usage
 | `free` | Shows RAM usage in **kilobytes (KB)** (total, used, free, cache). | \`free |
 | `free -m` | Displays RAM usage in **megabytes (MB)** (easier to read). | `free -m` |
 | `df -h` | Reports disk space usage in **human-readable** format (GB/MB). | \`df -h |
-
-**You can also use** `date +` **with various options to format output:**
-
-```bash
-date +"%d-%m-%Y"  # Custom date format
-date +"%A"        # Day of the week
-```
 
 ---
 
@@ -422,6 +422,9 @@ Got stuck? Want a Vim cheat sheet? Drop a comment or share your favorite Linux t
 
 ```bash
 cat /etc/passwd             # List users
+    or
+getent passwd               # List users
+id username                 #find particular user is available or not
 useradd username            # Add user (creates home dir + group)
 useradd -M username         # Add user without home folder
 userdel username            # Delete user (keeps folder)
@@ -430,13 +433,17 @@ passwd username             # Set user password
 su - username               # Switch to user
 ```
 
+> ### **Whenever we created a user, Automatically group also created**
+
 **👪 Group Management**
 
 ```bash
-cat /etc/group              # List groups
-groupadd groupname          # Add group
-groupdel groupname          # Delete group
-usermod -a -G group user    # Add user to group
+cat /etc/group                    # List groups
+     or
+getent group                      #list group
+groupadd groupname                # Add group
+groupdel groupname                # Delete group
+usermod -aG groupname username    # Add user to group
 ```
 
 > ⚠️ Don’t forget the `-a` flag with `usermod`. Without it, existing group memberships are removed.
@@ -455,14 +462,42 @@ sed -n '15,30p' filename    # Print lines 15–30
 
 ### 🔍 Using grep to Search
 
+**grep full form “global regular expression print“ : It is used to search for a word in a file**
+
 ```bash
 grep "word" filename        # Search for word
 grep -n "word" filename     # With line numbers
 grep -c "word" filename     # Count occurrences
 grep -i "word" filename     # Case-insensitive
+grep -in -e "word" -e "word" filename    #searching for multiple words with line numbers
 ```
 
 ### **🔐 File Ownership and Permissions**
+
+**Basic knowing knowledge of file permissions**
+
+```plaintext
+r = read     ----> 4
+w = write    ----> 2
+x = execute  ----> 1
+- = nothing  ----> 0
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+for example1 : -(rw-)(r--)(r--) = {644} is the default permission
+                 |    |    |
+               user group others
+user  : rw- = [4+2+0=6]
+group : r-- = [4+0+0=4]
+other : r-- = [4+0+0=4]
+
+for example2 : -(rwx)(--x)(-w-) = {712} is the file permission
+                 |    |    |
+               user group others
+user  : rwx = [4+2+1=7]
+group : --x = [0+0+1=1]
+other : -w- = [0+2+0=2]
+```
 
 **👤 Change File Owner**
 
@@ -526,6 +561,19 @@ locate filename
 | Go to end | `Ctrl + E` |
 | Reverse search history | `Ctrl + R` |
 | Show command history | `history` |
+
+---
+
+```markdown
+[Download the Linux Cheat Sheet PDF](https://drive.google.com/file/d/1vIbY23HLPY51dRI1muc6yrX62E7BNyDr/view?usp=sharing)
+```
+
+* **Alternatively, embed the PDF using an iframe (if supported by your hosting service):**
+    
+
+```xml
+<iframe src="https://drive.google.com/file/d/1vIbY23HLPY51dRI1muc6yrX62E7BNyDr/view?usp=sharing" width="100%" height="500px"></iframe>
+```
 
 ---
 
